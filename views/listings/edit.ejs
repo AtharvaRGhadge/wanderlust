@@ -1,0 +1,125 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row mt-4">
+    <div class="col-8 offset-2">
+        <!-- If the listing's title is Mountain Villa, the input will display Mountain Villa automatically.
+        This lets the user edit the existing title instead of typing it again from scratch.
+        value-Sets the initial/current value -->
+        <br>
+        <h3 style="color: black;">Edit your listing!</h3>
+        
+        <form method="POST" action="/listings/<%=listing._id%>?_method=PUT" data-bs-validate novalidate 
+            class="needs-validation"
+            enctype="multipart/form-data">
+            <!-- Title -->
+            <div class="mb-3">
+                <label for="title" class="form-label" style="color: black;">Title</label>
+                <input 
+                    id="title" 
+                    name="listing[title]" 
+                    value="<%=listing.title%>" 
+                    type="text" 
+                    class="form-control" 
+                    style="background-color: white !important; color: black !important;" 
+                    aria-describedby="titleValid titleInvalid"
+                    required
+                >
+                <div id="titleValid" class="valid-feedback">Title looks good!</div>
+                <div id="titleInvalid" class="invalid-feedback">Please enter a title.</div>
+            </div>
+            
+            <!-- Description -->
+            <div class="mb-3">
+                <label for="description" class="form-label" style="color: black;">Description</label>
+                <textarea 
+                    id="description" 
+                    name="listing[description]" 
+                    class="form-control" 
+                    style="background-color: white !important; color: black !important;" 
+                    aria-describedby="descriptionValid descriptionInvalid"
+                    required
+                ><%=listing.description%></textarea>
+                <div id="descriptionValid" class="valid-feedback">Description looks good!</div>
+                <div id="descriptionInvalid" class="invalid-feedback">Please enter a description.</div>
+            </div>
+            
+            <!-- image preview -->
+            <p class="form-label mb-2" style="color: black;">Original listing image:</p>
+            <div class="listing-image-preview mb-3">
+                <img src="<%=originalImageUrl%>" alt="Current image for <%=listing.title%>">
+            </div>
+
+            <!-- Optional replacement image -->
+            <div class="mb-3">
+                <label for="image" class="form-label" style="color: black;">Upload New Image</label>
+                <input 
+                    id="image" 
+                    name="listing[image]" 
+                    type="file" 
+                    class="form-control" 
+                    style="background-color: white !important; color: black !important;" 
+                    aria-describedby="imageValid imageInvalid"
+                >
+                <div id="imageValid" class="valid-feedback">Image looks good!</div>
+                <div id="imageInvalid" class="invalid-feedback">Please provide a valid image</div>
+            </div>
+            
+            <!-- Price & Country -->
+            <div class="row">
+                <div class="mb-3 col-12 col-md-4">
+                    <label for="price" class="form-label" style="color: black;">Price</label>
+                    <input 
+                        id="price" 
+                        name="listing[price]" 
+                        value="<%=listing.price%>" 
+                        type="number" 
+                        class="form-control" 
+                        style="background-color: white !important; color: black !important;" 
+                        aria-describedby="priceValid priceInvalid"
+                        required
+                        
+                    >
+                    <div id="priceValid" class="valid-feedback">Price looks good!</div>
+                    <div id="priceInvalid" class="invalid-feedback">Please enter a valid price.</div>
+                </div>
+                
+                <div class="mb-3 col-12 col-md-8">
+                    <label for="country" class="form-label" style="color: black;">Country</label>
+                    <input 
+                        id="country" 
+                        name="listing[country]" 
+                        value="<%=listing.country%>" 
+                        type="text" 
+                        class="form-control" 
+                        style="background-color: white !important; color: black !important;" 
+                        aria-describedby="countryValid countryInvalid"
+                        required
+                    >
+                    <div id="countryValid" class="valid-feedback">Country looks good!</div>
+                    <div id="countryInvalid" class="invalid-feedback">Please enter a country name.</div>
+                </div>
+            </div>
+            
+            <!-- Location -->
+            <div class="mb-3">
+                <label for="location" class="form-label" style="color: black;">Location</label>
+                <input 
+                    id="location" 
+                    name="listing[location]" 
+                    value="<%=listing.location%>" 
+                    type="text" 
+                    class="form-control" 
+                    style="background-color: white !important; color: black !important;" 
+                    aria-describedby="locationValid locationInvalid"
+                    required
+                >
+                <div id="locationValid" class="valid-feedback">Location looks good!</div>
+                <div id="locationInvalid" class="invalid-feedback">Please enter a location.</div>
+            </div>
+            
+            <button class="btn btn-dark edit-btn mt-3 mb-5">Edit</button>
+            
+        </form>
+        <br>
+    </div>
+</div>

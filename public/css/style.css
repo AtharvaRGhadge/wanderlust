@@ -1,0 +1,202 @@
+body{
+    background-color:white;
+    font-family: "Plus Jakarta Sans",sans-serif !important;
+    /* .plus-jakarta-sans-<uniquifier> {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    } */
+     color: #222222 !important;
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
+     min-height: 100dvh;
+}
+
+footer {
+    margin-top: auto !important;
+    flex-shrink: 0;
+}
+
+.page-content{
+    flex: 1 0 auto;
+}
+
+.flash-message.flash-success{
+    background-color: #d1e7dd !important;
+    border-color: #badbcc !important;
+    color: #0f5132 !important;
+}
+
+.flash-message.flash-error{
+    background-color: #f8d7da !important;
+    border-color: #f5c2c7 !important;
+    color: #842029 !important;
+}
+
+.navbar{
+    height:5rem
+}
+
+.navbar .container-fluid{
+    padding-right: 0;
+}
+
+.navbar .navbar-brand{
+    margin-right: 0.5rem;
+}
+
+.navbar .drawer-body > .navbar-nav:first-child{
+    padding-left: 0;
+}
+
+.navbar .drawer-body > .navbar-nav:first-child .nav-link{
+    padding-left: 0;
+}
+
+.fa-compass{
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link{
+    color:#222222 !important;
+    /* to override bootstrap styling we use !important */
+}
+
+/* footer */
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+.f-info-links,.f-info-socials,.f-info-brand{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.f-info-socials i{
+    margin-right: 1 rem;
+    font-size: 1.2rem;
+}
+.f-info{
+    text-align: center;
+    height: 8rem;
+    display: flex; /* footer elements in one line */
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+/* The flex-wrap: wrap; CSS property allows flex items to break onto multiple lines within a flex container if they run out of space. */
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/* Cards */
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding: 0px;
+}
+
+.btn:hover {
+    color: white !important;
+}
+
+.card-text p{
+    font-weight: 400;
+}
+
+/* card effects */
+.listing-link{
+    text-decoration: none;
+}
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* new page */
+.add-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* edit page */
+.edit-btn{
+    background-color: #fe424d;
+    border: none !important;
+}
+
+.listing-image-preview{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 12rem;
+    padding: 0.75rem;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.75rem;
+}
+
+.listing-image-preview img{
+    display: block;
+    width: 100%;
+    max-height: 18rem;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+/* show page */
+.card-img-top show-img{
+    height: 30vh;
+    width: 20rem;
+}
+
+/* form validation */
+/* Force display when field is valid */
+.was-validated .form-control:valid ~ .valid-feedback,
+.form-control.is-valid ~ .valid-feedback {
+    display: block !important;
+    color: #198754 !important;
+}
+
+/* Force display when field is invalid */
+.was-validated .form-control:invalid ~ .invalid-feedback,
+.form-control.is-invalid ~ .invalid-feedback {
+    display: block !important;
+    color: #dc3545 !important;
+}
+
+.fa-triangle-exclamation{
+    margin-top: 0.3rem;
+}
+
+/* map */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+#map .maplibregl-popup-close-button {
+    color: #000;
+}
